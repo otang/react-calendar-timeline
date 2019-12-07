@@ -409,7 +409,7 @@ export default class ReactCalendarTimeline extends Component {
         )
       )
     }
-    
+
     return derivedState
   }
 
@@ -869,13 +869,13 @@ export default class ReactCalendarTimeline extends Component {
 
   /**
    * check if child of type TimelineHeader
-   * refer to for explanation https://github.com/gaearon/react-hot-loader#checking-element-types 
+   * refer to for explanation https://github.com/gaearon/react-hot-loader#checking-element-types
    */
   isTimelineHeader = (child) => {
     if(child.type === undefined) return false
     return child.type.secretKey ===TimelineHeaders.secretKey
   }
-  
+
   childrenWithProps(
     canvasTimeStart,
     canvasTimeEnd,
@@ -1015,10 +1015,6 @@ export default class ReactCalendarTimeline extends Component {
       groupTops = stackResults.groupTops
     }
 
-    const outerComponentStyle = {
-      height: `${height}px`
-    }
-
     return (
       <TimelineStateProvider
         visibleTimeStart={visibleTimeStart}
@@ -1043,7 +1039,7 @@ export default class ReactCalendarTimeline extends Component {
               className="react-calendar-timeline"
             >
               {this.renderHeaders()}
-              <div style={outerComponentStyle} className="rct-outer">
+              <div className="rct-outer">
                 {sidebarWidth > 0 ? this.sidebar(height, groupHeights) : null}
                 <ScrollElement
                   scrollRef={this.getScrollElementRef}
